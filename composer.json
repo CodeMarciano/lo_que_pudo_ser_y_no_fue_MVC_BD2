@@ -1,0 +1,10 @@
+{
+    "name": "play3r/project-mvc",
+    "type": "project",
+    "require": {},
+    "autoload":{
+        "classmap":[
+            "." 
+        ]
+    }
+}

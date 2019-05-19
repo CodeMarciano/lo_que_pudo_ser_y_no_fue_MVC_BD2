@@ -1,0 +1,13 @@
+ReWriteEngine On
+
+#index - lista
+
+ReWriteRule ^([a-zA-Z\-]+)$ index.php?namespace=$1&method=index [QSA]
+
+# create
+ReWriteRule ^([a-zA-Z\-]+)/([a-zA-Z\-]+)$ index.php?namespace=$1&method=$2 [QSA]
+
+# show - store 
+ReWriteRule ^([a-zA-Z\-]+)/([0-9\-]+)$ index.php?controller=$1&method=show$id=$2 [QSA]
+
+ReWriteRule ^([a-zA-Z\-]+)/([0-9\-]+)/([a-zA-Z\-]+)$ index.php?controller=$1&method=$3$id=$2 [QSA]
