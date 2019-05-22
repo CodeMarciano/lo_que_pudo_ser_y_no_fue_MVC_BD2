@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link rel="stylesheet" href="../resources/materialize/css/materialize-icons.css">
-    <link rel="stylesheet" href="../resources/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="<?php echo Config::webRoot?>/resources/materialize/css/materialize-icons.css">
+    <link rel="stylesheet" href="<?php echo Config::webRoot?>/resources/materialize/css/materialize.min.css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 
                 <div class="input-field col s12">
                     <label for="contrasenia"> Password </label><br>
-                    <input type="text" name="contrasenia" id="contrasenia" class="validate" required>
+                    <input type="password" name="contrasenia" id="contrasenia" class="validate" required>
                 </div>
                 <button type="submit" class="btn btn-info">Aceptar</button>
 
@@ -34,6 +34,6 @@
         </div>
     </div>
 </div>
-<script src="../resources/materialize/js/materialize.min.js"></script>
+<script src="<?php echo Config::webRoot?>/resources/materialize/js/materialize.min.js"></script>
 </body>
 </html>
