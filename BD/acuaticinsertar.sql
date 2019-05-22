@@ -56,7 +56,7 @@ insert into rol(nombre) values('Instructor');
 -- usuario
 insert into usuario(ciUsuario,idRol,primerNombre,apellidoPaterno,direccion,numeroCelular,genero,fechaNacimiento,usuario,contrasenia,activo) 
 values('911',1,'Beatriz','Loayza','Quillacollo 888',70722220,'F','1979-05-25','beatriz','293a09bc5efd175ff2edbdb9273a748bac4a0740',1),
-	  ('912',1,'Jose','Perez','Colcapirhua 777',70722220,'M','1975-06-35','jose','jose',1);
+	  ('912',1,'Jose','Perez','Colcapirhua 777',70722220,'M','1975-06-20','jose','jose',1);
 
 
 -- instructor
