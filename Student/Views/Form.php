@@ -1,82 +1,185 @@
-<div class="container">
-    <div class="card mt-5">
-        <div class="card-header">
-            <h2>Student</h2>
-        </div>
+<?php include("./resources/indexcomponent/header.php") ?>
+    <div class="section container">
+        <div class="row">
+            <form action="prueba.php" method="post" class="col s12">
+                <div class="row card-panel">
 
-        <div class="card-body">
-            <!-- TEMP -->
-            <form action = "<?= Config::webRoot ?>/student/store" method="POST">
+                    <h3>Registro Estudiante</h3>
 
-                <div class="form-group">
-                    <label for="ciEstudiante">Ci Student </label><br>
-                    <input type="text" name="ciEstudiante" id="ciEstudiante" class="form-control">
-                </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="primerNombre" id="primerNombre" class="validate" required>
+                        <label for="primerNombre">Primer Nombre:</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="primerNombre">First Name</label><br>
-                    <input type="text" name="primerNombre" id="primerNombre" class="form-control">
-                </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="segundoNombre" id="segundoNombre">
+                        <label for="segundoNombre">Segundo Nombre:</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="segundoNombre">Last Name</label><br>
-                    <input type="ciUsuario" name="segundoNombre" id="segundoNombre" class="form-control">
-                </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="apellidoPaterno" id="apellidoPaterno" class="validate" required>
+                        <label for="apellidoPaterno">Apellido Paterno:</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="apellidoPaterno">Fisrt Address</label><br>
-                    <input type="text" name="apellidoPaterno" id="apellidoPaterno" class="form-control">
-                </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="apellidoMaterno" id="apellidoMaterno">
+                        <label for="apellidoMaterno">Apellido Materno:</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="apellidoMaterno">Last Address</label><br>
-                    <input type="text" name="apellidoMaterno" id="apellidoMaterno" class="form-control">
-                </div>
+                    <div class="input-field col s3">
+                        <input type="text" name="fechaNacimiento" placeholder="Fecha de Nacimiento"
+                               id="calcularNacimiento" class="datepicker">
+                    </div>
+                    <!--                Para que muestre la edad-->
+                    <div class="input-field col s3" id="dibujarEdad">
+                        <!--                    <input disabled type="text">-->
+                    </div>
 
-                <div class="form-group">
-                    <label for="direccion">Location</label><br>
-                    <input type="text" name="direccion" id="direccion" class="form-control">
-                </div>
+                    <div class="input-field col s5" id="opcionMenorEdad" hidden>
+                        <select name="opcion" id="valorSelect">
+                            <!--                        <option value="" disabled selected>Opcion</option>-->
+                            <option value="No" selected>No</option>
+                            <option value="Si">Si</option>
+                        </select>
+                        <label style="font-size: 14px;">ci Estudiante (opcional para menor de edad)</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="numeroCelular">Phone Number</label><br>
-                    <input type="text" name="numeroCelular" id="numeroCelular" class="form-control">
-                </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="ci" id="ci" class="validate desabilitar" required>
+                        <label for="ci">CI:</label>
+                    </div>
 
-                <div class="form-group">
-                    <label for="genero">Gender</label><br>
-                    <input type="text" name="genero" id="genero" class="form-control">
-                </div>
+                    <div class="file-field input-field col s6">
+                        <div class="btn desabilitar">
+                            <span>Archivo</span>
+                            <input type="file" class="desabilitar">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate desabilitar" type="text" name="ciAnverso"
+                                   placeholder="imagen CI Anverso:" required>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="fechaNacimiento">Birth Date</label><br>
-                    <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control">
-                </div>
+                    <div class="file-field input-field col s6">
+                        <div class="btn desabilitar">
+                            <span>Archivo</span>
+                            <input type="file" class="desabilitar">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate desabilitar" type="text" name="ciReverso"
+                                   placeholder="imagen CI Reverso:" required>
+                        </div>
+                    </div>
 
-<!--                <div class="form-group">-->
-<!--                    <label for="fotografia">Photo</label><br>-->
-<!--                    <input type="text" name="fotografia" id="fotografia" class="form-control">-->
-<!--                </div>-->
-<!--                -->
-<!--                <div class="form-group">-->
-<!--                    <label for="imagenCiAnverso">Image Ci Obverse</label><br>-->
-<!--                    <input type="text" name="imagenCiAnverso" id="imagenCiAnverso" class="form-control">-->
-<!--                </div>-->
-<!---->
-<!--                <div class="form-group">-->
-<!--                    <label for="imagenCiReverso">image Ci Reverse</label><br>-->
-<!--                    <input type="text" name="imagenCiReverso" id="imagenCiReverso" class="form-control">-->
-<!--                </div>-->
-                
-                <div class="form-group">
-                    <label for="activo">Active</label><br>
-                    <input type="text" name="activo" id="activo" class="form-control">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-info">Create a User</button>
-                </div>
+                    <div class="file-field input-field col s6">
+                        <div class="btn">
+                            <span>Archivo</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" name="fotografia" placeholder="Fotagrafia"
+                                   required>
+                        </div>
+                    </div>
+
+                    <p class="col s12">
+                        El estudiante esta: &nbsp;&nbsp;&nbsp;
+                        <label>
+                            <input class="with-gap" name="activo" type="radio" value="activo" checked/>
+                            <span>Activo</span>
+                        </label>
+                        &nbsp;
+                        <label>
+                            <input class="with-gap" name="activo" type="radio" value="inactivo"/>
+                            <span>Inactivo</span>
+                        </label>
+                    </p>
+                    <!--                DESDE AQUI EMPIZA FORMULARIO TUTOR-->
+                    <div class="col s12">
+                        <h3>Tutor</h3>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" name="primerNombreTutor" id="primerNombreTutor" class="validate" required>
+                        <label for="primerNombreTutor">Primer Nombre:</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" name="segundoNombreTutor" id="segundoNombreTutor">
+                        <label for="segundoNombreTutor">Segundo Nombre:</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" name="apellidoPaternoTutor" id="apellidoPaternoTutor" class="validate"
+                               required>
+                        <label for="apellidoPaternoTutor">Apellido Paterno:</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" name="apellidoMaternoTutor" id="apellidoMaternoTutor">
+                        <label for="apellidoMaternoTutor">Apellido Materno:</label>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <select name="tipoTutor">
+                            <option value="1" disabled selected>tipo tutor</option>
+                            <option value="2">abuelo</option>
+                            <option value="3">padre</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field col s9">
+                        <input type="text" name="direccionTutor" id="direccionTutor">
+                        <label for="direccionTutor">Direccion del Tutor:</label>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <input type="text" name="numeroCelular" id="numeroCelular">
+                        <label for="numeroCelular">Numero Celular:</label>
+                    </div>
+
+                    <div class="file-field input-field col s8">
+                        <div class="btn">
+                            <span>Archivo</span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Fotografia">
+                        </div>
+                    </div>
+
+                    <div class="col s3">
+                        <button class="btn" type="submit" style="width: 150px; height: 40px;">Enviar</button>
+                    </div>
+
+                </div> <!--End row card panel-->
+
             </form>
         </div>
-        
     </div>
- </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll(".datepicker");
+            var instancer = M.Datepicker.init(elems, {
+                format: 'yyyy-mm-dd',
+                i18n: {
+                    months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+                        'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vier', 'Sab'],
+                    weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Agost', 'Sep', 'Oct', 'Nov', 'Dic']
+                }
+            });
+
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+    <script src="views/js/app.js"></script>
+    <script src="views/js/manejoSelect.js"></script>
+
+<?php include("./resources/indexcomponent/footer.php") ?>
