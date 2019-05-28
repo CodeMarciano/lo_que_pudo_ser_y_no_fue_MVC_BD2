@@ -12,6 +12,7 @@ class Student{
     }
 
     function add(array $data){
+        \Helper::print($data);
         // hacer SQL y guarda data return id
         $sql = "
             INSERT INTO estudiante(ciEstudiante,primerNombre,segundoNombre, apellidoPaterno,apellidoMaterno,direccion,numeroCelular,genero,fechaNacimiento,activo) 
@@ -27,7 +28,7 @@ class Student{
      
     
     function getAll(){
-        $sql = "SELECT * FROM estudiante";
+        $sql = "SELECT * FROM estudiante;";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll(\PDO::FETCH_ASSOC);

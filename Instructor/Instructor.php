@@ -12,11 +12,11 @@ class Instructor{
     }
     
     function add(array $data){
-\Helper::print($data);
-        $sql =  "
+    \Helper::print($data);
+        /*$sql =  "
                 INSERT INTO instructor(ciInstructor,idRol,primerNombre,apellidoPaterno,direccion,numeroCelular,genero,fechaNacimiento,usuario,contrasenia,activo)
                 VALUES (:ciInstructor,:idRol,:primerNombre,:apellidoPaterno,:direccion,:numeroCelular,:genero,:fechaNacimiento,:usuario,:contrasenia,:activo);
-                ";
+                ";*/
 
         $sql =  "
         INSERT INTO instructor(ciInstructor,idRol,primerNombre)
@@ -33,7 +33,7 @@ class Instructor{
     }
 
     function getAll(){
-        $sql = "SELECT * FROM instructor";
+        $sql = "SELECT * FROM instructor;";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll(\PDO::FETCH_ASSOC);

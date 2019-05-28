@@ -23,7 +23,8 @@
             $data = $stm->fetchAll(\PDO::FETCH_ASSOC);//ahi estan los todos los datos en las pociones
             //\Helper::print($data); //este helper muestra en la pantalla lo que se agrego en array
             if (count($data) == 1) {
-                header("location: ".\Config::webRoot."/student/create");
+//                header("location: ".\Config::webRoot."/student/create");
+
                 die();
                 //echo "correct";
                 return $data[0];
